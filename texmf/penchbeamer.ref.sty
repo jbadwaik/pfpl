@@ -1,0 +1,26 @@
+%-------------------------------------------------------------------------------
+% SPDX-License-Identifier: "CC-BY-4.0"
+% Copyright (C) 2022, Jayesh Badwaik <j.badwaik@fz-juelich.de>
+%-------------------------------------------------------------------------------
+\ProvidesPackage{penchbeamer.ref}
+\RequirePackage{hyperref}
+
+\PassOptionsToPackage{
+  hypertexnames=true,
+  plainpages=false,
+  pdfpagelabels,
+  pagebackref,
+}
+{hyperref}
+
+\providecommand{\penchurlcolor}{Sepia}
+\providecommand{\penchlinkcolor}{MidnightBlue}
+\providecommand{\penchcitecolor}{ForestGreen}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=\penchurlcolor,
+  linkcolor=\penchlinkcolor,
+  citecolor=\penchcitecolor,
+}
+

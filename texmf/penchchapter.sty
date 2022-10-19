@@ -1,0 +1,51 @@
+\ProvidesPackage{penchchapter}
+
+% Select indents and widths for the objects in table of contents. We use `em`
+% units since the widths and indents are decided based on the font width.
+\RedeclareSectionCommand[tocindent=2em,tocnumwidth=2.0em]{chapter}
+
+% Set Font Size of Chapter Title Text
+\addtokomafont{chapter}{
+  \fontsize{1.8ex}{1.8ex}\selectfont
+}
+
+% Set Font Size of Chapter Number Text
+\newkomafont{chapternumber}{
+  \fontsize{5ex}{5ex}\selectfont
+}
+
+% Set Font Size of Chapter Name Text
+\newkomafont{chaptername}{
+  \itshape\rmfamily\normalsize
+}
+
+\makeatletter
+\renewcommand{\chapterlinesformat}[3]{%
+  \begin{minipage}{0.20\textwidth}
+    \begin{center}
+      #2
+    \end{center}
+  \end{minipage}
+  ~
+  \begin{minipage}[b]{0.79\textwidth}
+    \linespread{1.5}\selectfont
+    \begin{flushleft}
+      #3
+    \end{flushleft}
+  \end{minipage}
+}
+\makeatother
+
+% Set Chapter Formatting
+\renewcommand\chapterformat{
+  \parbox[b][8ex]{3em}{
+    \centering{
+      \usekomafont{chaptername}{\chaptername}
+    }\\
+    \vspace{0ex}
+    \usekomafont{chapternumber}{\thechapter}
+    \vfill
+  }
+  \rule[-0.5ex]{1pt}{10ex}
+  \enskip
+}

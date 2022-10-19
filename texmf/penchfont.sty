@@ -1,0 +1,37 @@
+\ProvidesPackage{penchfont}
+
+\RequirePackage{fontspec}
+\RequirePackage{microtype}
+\PassOptionsToPackage{final}{microtype}
+
+\RequirePackage{unicode-math}
+
+\setmainfont[ItalicFont={Linux Libertine O Italic}]{Alegreya}
+\setmathfont
+[
+Scale=0.9,
+%math-style=upright
+]
+{Latin Modern Math}
+
+\setmathfont
+[
+Scale=0.9,
+range={bb}
+]{TeX Gyre Pagella Math}
+
+\setmathfont
+[
+Scale=0.9,
+range={scr,bfscr}
+]{Tex Gyre Bonum Math}
+
+\setmathfont
+[
+Scale=0.9,
+range=\setminus
+]{XITS Math}
+
+\newcommand{\inlinecode}[1]{\textcolor{RawSienna}{\texttt{#1}}}
+\linespread{1.1}
+

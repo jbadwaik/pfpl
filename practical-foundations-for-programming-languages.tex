@@ -1,0 +1,35 @@
+%-------------------------------------------------------------------------------
+% SPDX-License-Identifier: "CC-BY-4.0"
+% Copyright (C) 2022, Jayesh Badwaik <j.badwaik@fz-juelich.de>
+%-------------------------------------------------------------------------------
+\makeatletter
+\def\input@path{{./texmf}}
+\makeatother
+\documentclass[twoside=false,10pt,paper=a4]{penchbook}
+\setlength{\footheight}{10mm}
+\RequirePackage[
+  bindingoffset=6mm,
+  headheight=10mm,
+  inner=20mm,
+  top=20mm,
+  bottom=25mm,
+  outer=17mm
+]{geometry}
+
+\input{author}
+
+\addbibresource{library.bib}
+\begin{document}
+\pagestyle{main}
+\maketitle
+\frontmatter
+\addcontentsline{toc}{chapter}{Contents}
+\tableofcontents
+\mainmatter
+
+\chapter{Abstract Syntax}
+\input{src/as.ast.tex}
+\appendix
+\backmatter
+\end{document}
+

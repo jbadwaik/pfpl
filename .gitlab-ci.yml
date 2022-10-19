@@ -1,0 +1,10 @@
+pdf:
+  image: texlive/texlive
+  tags: ["docker"]
+  script:
+    - make verbose
+  artifacts:
+    expire_in: never
+    paths:
+      - "*.pdf"
+

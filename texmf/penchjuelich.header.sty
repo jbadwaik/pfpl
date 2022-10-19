@@ -1,0 +1,41 @@
+%-------------------------------------------------------------------------------
+% SPDX-License-Identifier: "CC-BY-4.0"
+% Copyright (C) 2022, Jayesh Badwaik <j.badwaik@fz-juelich.de>
+%-------------------------------------------------------------------------------
+\ProvidesPackage{penchbeamer.header}
+
+%% This code sets up the footer of the presentation
+\makeatother
+\setbeamertemplate{footline}
+{
+  \leavevmode
+  \hbox{
+    \begin{beamercolorbox}[
+      wd=.25\paperwidth,
+      ht=3ex,
+      dp=1ex,
+      center
+      ]
+      {author in head/foot,white}%
+      \usebeamerfont{author in head/foot}
+      Member of the Helmholtz Association
+    \end{beamercolorbox}
+    \begin{beamercolorbox}
+      [wd=.20\paperwidth,ht=3ex,dp=1ex,center]
+      {title in head/foot,white}
+      \usebeamerfont{title in head/foot}
+      \insertdate
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[wd=.15\paperwidth,ht=3ex,dp=1ex,center]{author in
+      head/foot,white}
+      \usebeamerfont{title in head/foot}
+      \insertframenumber{} / \inserttotalframenumber\hspace*{1ex}
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[wd=.35\paperwidth,ht=3ex,dp=1ex,right]
+      {author in head/foot, white}
+      \includegraphics[height=10ex]{fzj.pdf}
+    \end{beamercolorbox}
+  }
+  \vskip3ex%
+}
+\makeatletter

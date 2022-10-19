@@ -1,0 +1,164 @@
+\ProvidesPackage{penchtheorem}
+
+\RequirePackage{amsthm}
+\RequirePackage{thmtools}
+\RequirePackage{bigints}
+
+\RequirePackage{mdframed}
+\PassOptionsToPackage{framemethod=TikZ}{mdframed}
+
+
+\definecolor{theoremgray}{rgb}{0.96,0.96,0.96}
+
+\makeatletter
+\@ifclassloaded{pencharticle}
+{
+  \declaretheoremstyle
+  [
+  bodyfont=\normalfont,
+  headfont=\color{MidnightBlue}\normalfont\bfseries,
+  notefont=\color{MidnightBlue}\normalfont\itshape,
+  preheadhook={\begin{mdframed}[backgroundcolor=theoremgray, %
+      innertopmargin =0pt , splittopskip = \topskip, %
+      skipbelow= 6pt, skipabove=6pt,
+    topline=false,bottomline=false,leftline=false,rightline=false]},
+  postfoothook=\end{mdframed}
+  ]
+  {jstyle}
+}
+{
+  \declaretheoremstyle
+  [
+  numberwithin=chapter,
+  bodyfont=\normalfont,
+  headfont=\color{MidnightBlue}\normalfont\bfseries,
+  notefont=\color{MidnightBlue}\normalfont\itshape,
+  preheadhook={\begin{mdframed}[backgroundcolor=theoremgray, %
+      innertopmargin =0pt , splittopskip = \topskip, %
+      skipbelow= 6pt, skipabove=6pt,
+    topline=false,bottomline=false,leftline=false,rightline=false]},
+  postfoothook=\end{mdframed}
+  ]
+  {jstyle}
+}
+\makeatother
+
+\declaretheoremstyle
+[
+numbered=no,
+bodyfont=\normalfont,
+headfont=\color{MidnightBlue}\normalfont\bfseries,
+notefont=\color{MidnightBlue}\normalfont\itshape,
+]
+{ujstyle}
+
+\declaretheorem
+[
+style=jstyle,
+name = Theorem,
+]{theorem}
+
+\declaretheorem
+[
+style=jstyle,
+name = Proposition,
+]{proposition}
+
+\declaretheorem
+[
+style=jstyle,
+name = Lemma,
+]{lemma}
+
+\declaretheorem
+[
+style=jstyle,
+name = Definition,
+]{definition}
+
+\declaretheorem
+[
+style=jstyle,
+name = Corollary,
+]{corollary}
+
+\declaretheorem
+[
+style=jstyle,
+name = Axiom,
+]{axiom}
+
+\declaretheorem
+[
+style=remark,
+name = Note,
+]{note}
+
+\declaretheorem
+[
+style=remark,
+name = Remark,
+]{remark}
+
+\declaretheorem
+[
+style=remark,
+name = Notation,
+]{notation}
+
+\declaretheorem
+[
+style=ujstyle,
+name = Theorem,
+]{theorem*}
+
+\declaretheorem
+[
+style=ujstyle,
+name = Proposition,
+]{proposition*}
+
+\declaretheorem
+[
+style=ujstyle,
+name = Lemma,
+]{lemma*}
+
+\declaretheorem
+[
+style=ujstyle,
+name = Definition,
+]{definition*}
+
+\declaretheorem
+[
+style=ujstyle,
+name = Corollary,
+]{corollary*}
+
+\declaretheorem
+[
+style=ujstyle,
+name = Axiom,
+]{axiom*}
+
+\declaretheorem
+[
+style=remark,
+name = Note,
+]{note*}
+
+\declaretheorem
+[
+style=remark,
+name = Remark,
+]{remark*}
+
+\declaretheorem
+[
+style=remark,
+name = Notation,
+]{notation*}
+
+
+

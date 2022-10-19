@@ -1,0 +1,30 @@
+on: push
+
+jobs:
+  pdf:
+    runs-on: ubuntu-22.04
+    container:
+      image: texlive/texlive
+    steps:
+      - uses: actions/checkout@v2
+      - name: Compile
+        run: make verbose
+      - uses: actions/upload-artifact@v3
+        name: github-pages
+        with:
+          name: pfpl.pdf
+          path: pfpl.pdf
+
+  deploy:
+    needs: pdf
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: github-pages
+        id: deployment
+        uses: actions/deploy-pages@v1

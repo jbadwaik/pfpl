@@ -26,6 +26,7 @@
 \RequirePackage{penchchapter.header}
 \RequirePackage{penchsymbol}
 \RequirePackage{penchmath}
+\RequirePackage{penchtheorem}
 \RequirePackage{graphicx}
 \RequirePackage{setspace}
 \RequirePackage{algorithm}
